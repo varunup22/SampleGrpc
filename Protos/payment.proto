@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "SamplePaymentService";
+
+package payment;
+
+// The payment service definition.
+service PaymentServicce	 {
+	rpc MakePayment (MakePaymentRequest) returns (MakePaymentReply) {}
+}
+
+message MakePaymentRequest {
+	string productId = 1;
+	int32 quantity = 2;
+	string address = 3;
+}
+
+// The response message containing the greetings.
+message MakePaymentReply {
+	string TransactionId = 1;
+}
+
